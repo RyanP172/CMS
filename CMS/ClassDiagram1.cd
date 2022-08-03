@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CMS.Cinema">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgCAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cinema.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Seats" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CMS.CinemaComplex">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAAAAAgEAAAACAAAAQAAAEACAAGAAAAAAAAEQA=</HashCode>
+      <FileName>CinemaComplex.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cinemas" />
+      <Property Name="Movies" />
+      <Property Name="Sessions" />
+      <Property Name="TicketMachines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CMS.Movie">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAEAAACAAAAAAAAAAAAEAAACACAAAAAA=</HashCode>
+      <FileName>Movie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Sessions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CMS.Session">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAEAAAAAAAAAAAIAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Session.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Movie" />
+      <Property Name="Cinema" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CMS.Ticket">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ticket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Seat" />
+      <Property Name="Session" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CMS.TicketMachine">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TicketMachine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CinemaComplex" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CMS.Seat">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="CMS.Seat.SeatStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Seat.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Seat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
