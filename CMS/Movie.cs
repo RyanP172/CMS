@@ -12,13 +12,17 @@ namespace CMS
         {
             Title = title;
             Duration = duration;
-            Rating = rating;
+            Rating = rating;          
+            
+            
         }
         public string Title { get; set; }
 
         public int Duration { get; set; }
 
         public string Rating { get; set; }
+        
+        
 
         public List<Session> Sessions { get; set; } = new List<Session>();
         public List<Session> FutureSessions

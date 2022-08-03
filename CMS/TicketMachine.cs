@@ -32,6 +32,27 @@ namespace CMS
             }
         }
 
+        public void PrintTicket(Session session)
+        {
+            var ticket = new Ticket(session);
+            Console.WriteLine("TICKET");
+            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine(ticket.Session.Movie.Title.ToUpper());
+            Console.WriteLine($"Location: \t\t{CinemaComplex.Name}");            
+            Console.WriteLine($"Session Date: \t\t{ticket.Session.StartTime.Date.ToLongDateString()}");
+            Console.WriteLine($"Start Time: \t\t{ticket.Session.StartTime.ToLongTimeString()}");
+            Console.WriteLine($"End Time: \t\t{ticket.Session.EndTime.ToLongTimeString()}");
+            Console.WriteLine($"Cinema: \t\t{ticket.Session.Cinema.Name}");
+            Console.Write("Seat: ");
+            foreach (var s in ticket.Session.Cinema.TakenSeats)
+            {
+                Console.Write($"\t\t\t{s.Name}");
+            }
+            Console.WriteLine("");
+            Console.ReadLine();
+
+        }
+
 
 
 

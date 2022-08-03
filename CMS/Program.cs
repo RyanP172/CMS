@@ -30,17 +30,18 @@
                 }
             }
 
-            complex.AddMovie("Game of Throne", 110, "R");
-            complex.AddMovie("Hunger Game", 75, "M");
+            complex.AddMovie("Mia", 110, "R");
+            complex.AddMovie("Cat", 75, "M");
             complex.AddMovie("Sniper", 90, "G");
-            
-            complex.ScheduleSession(DateTime.Parse("2022/08/04 8:30:00 AM"), "Game of Throne", "C1");
-            complex.ScheduleSession(DateTime.Parse("2022/08/04 8:30:00 AM"), "Hunger Game", "C2");
-            complex.ScheduleSession(DateTime.Parse("2022/08/04 11:30:00 AM"), "Game of Throne", "C1");
-            complex.ScheduleSession(DateTime.Parse("2022/08/04 11:30:00 AM"), "Sniper", "C2");
-
-
             var ticketMachine = complex.AddTicketMachine("TM1");
+
+            complex.ScheduleSession(DateTime.Parse("2022/08/10 8:30:00 AM"), "Mia", "C1", "TM1");
+            complex.ScheduleSession(DateTime.Parse("2022/08/10 8:30:00 AM"), "Cat", "C2", "TM1");
+            complex.ScheduleSession(DateTime.Parse("2022/08/10 11:30:00 AM"), "Mia", "C1", "TM1");
+            complex.ScheduleSession(DateTime.Parse("2022/08/10 11:30:00 AM"), "Sniper", "C2", "TM1");
+
+
+            //var ticketMachine = complex.AddTicketMachine("TM1");
             Console.WriteLine($"Welcome to {complex.Name} ");
             Console.WriteLine($"Ticket Machine: {ticketMachine.Id}");
             Console.WriteLine("Movie (now Showing)");
@@ -79,6 +80,11 @@
             Console.WriteLine("Please select a seat: ");
             var seat = Console.ReadLine();
             sessions.Cinema.TakenSeat(seat);
+            Console.WriteLine("");
+            sessions.TicketMachine.PrintTicket(sessions);
+           
+            
+
 
             //Uncommend this section to test the taken seat
             #region Test taken seat

@@ -57,16 +57,18 @@ namespace CMS
             throw new Exception("Movie not found:" + title);
                 
         }
+        
 
         public List<Cinema> Cinemas { get; set; } = new List<Cinema>();
         public List<Movie> Movies { get; set; } = new List<Movie>();
         public List<Session> Sessions { get; set; } = new List<Session>();
 
-        public Session ScheduleSession(DateTime starttime, string title, string cinemaName)
+        public Session ScheduleSession(DateTime starttime, string title, string cinemaName, string ticketMachine)
         {
             var movie = FindMovieByTitle(title);
             var cinema = FindCinemaByName(cinemaName);
-            var session = new Session(starttime, movie, cinema);
+            var tm = FindTicketMachineById(ticketMachine);
+            var session = new Session(starttime, movie, cinema, tm);
             Sessions.Add(session);
             return session;
 
@@ -80,6 +82,19 @@ namespace CMS
             return tm;
         }
 
-        
+        public TicketMachine FindTicketMachineById(string id)
+        {
+            foreach (var tm in TicketMachines)
+            {
+                if (tm.Id == id)
+                {
+                    return tm;
+                }
+            }
+            throw new Exception("Ticket Machine not found:" + id);
+
+        }
+
+
     }
 }

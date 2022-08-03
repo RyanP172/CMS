@@ -60,7 +60,7 @@ namespace CMS
 
         }        
 
-        public void TakenSeat(string name)
+        public Seat TakenSeat(string name)
         {
             var seat = FindSeat(name);
             if (seat != null)
@@ -68,6 +68,7 @@ namespace CMS
                 seat.Status = Seat.SeatStatus.Taken;
                 TakenSeats.Add(seat);
             }
+            return seat;
         }
 
 
